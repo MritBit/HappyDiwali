@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    background: #0b0b1d;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+/* Make the "Happy Diwali" text responsive */
+#happyDiwali {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    font-size: 5rem;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 0 0 20px #ffdf70, 0 0 30px #ffb347, 0 0 50px #ff9c00;
+    opacity: 0;
+    animation: glowZoom 4s infinite ease-in-out;
+}
+
+/* Responsive scaling for small devices */
+@media only screen and (max-width: 768px) {
+    #happyDiwali {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #happyDiwali {
+        font-size: 2rem;
+    }
+}
+
+/* Zoom in and glowing animation */
+@keyframes glowZoom {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+        text-shadow: 0 0 30px #ffdf70, 0 0 40px #ffb347, 0 0 60px #ff9c00;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+        text-shadow: 0 0 20px #ffdf70, 0 0 30px #ffb347, 0 0 50px #ff9c00;
+    }
+}
+
+/* Canvas for fireworks */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
